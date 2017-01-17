@@ -62,6 +62,7 @@ module Builder
 		sdk, arch = compute_platform(sdk, arch)
 
 		args = []
+        args << %{OTHER_CFLAGS="-fembed-bitcode"}
 		args << %{-sdk "#{sdk}"}
 		args << %{-configuration "#{conf}"}
 		args << %{-target "#{target}"}
